@@ -17,7 +17,7 @@ services:
     restart: always
 
   app:
-    image: nextcloud:apache
+    build: .
     restart: always
     volumes:
       - nextcloud:/var/www/html
@@ -86,4 +86,3 @@ volumes:
 
 networks:
   proxy-tier:
-
