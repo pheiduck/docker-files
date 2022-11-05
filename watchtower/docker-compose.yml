@@ -2,7 +2,14 @@ version: "3"
 services:
   watchtower:
     image: containrrr/watchtower
+    container_name: watchtower
+    restart: unless-stopped
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - /etc/localtime:/etc/localtime:ro
-    command: --cleanup --include-restarting --rolling-restart --include-stopped --interval 21600
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_INCLUDE_RESTARTING=true
+      - WATCHTOWER_ROLLING_RESTART=true
+      - WATCHTOWER_INCLUDE_STOPPED=true
+      - WATCHTOWER_POLL_INTERVAL=21600
