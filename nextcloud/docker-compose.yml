@@ -47,7 +47,7 @@ services:
       - redis
 
   proxy:
-    build: nginxproxy/nginx-proxy:alpine
+    image: nginxproxy/nginx-proxy:alpine
     restart: always
     ports:
       - 80:80
