@@ -47,7 +47,7 @@ services:
       - redis
 
   proxy:
-    build: ./proxy
+    image: nginxproxy/nginx-proxy:alpine
     restart: always
     ports:
       - 80:80
@@ -55,6 +55,7 @@ services:
     labels:
       com.github.jrcs.letsencrypt_nginx_proxy_companion.nginx_proxy: "true"
     volumes:
+      - ./proxy/uploadsize.conf:/etc/nginx/conf.d/uploadsize.conf:ro
       - certs:/etc/nginx/certs:ro
       - vhost.d:/etc/nginx/vhost.d
       - html:/usr/share/nginx/html
@@ -86,4 +87,3 @@ volumes:
 
 networks:
   proxy-tier:
-
