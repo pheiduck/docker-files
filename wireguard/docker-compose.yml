@@ -7,6 +7,7 @@ services:
       - WG_PORT=51820
       - WG_DEFAULT_ADDRESS_IPV4=10.8.0.x
       - WG_DEFAULT_DNS=<dns>
+      - WG_PERSISTENT_KEEPALIVE=25
 
     image: pheiduck/wg-easy:latest
     container_name: wireguard
