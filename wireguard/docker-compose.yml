@@ -9,7 +9,7 @@ services:
       - WG_DEFAULT_DNS=<dns>
       - WG_PERSISTENT_KEEPALIVE=25
 
-    image: pheiduck/wg-easy:latest
+    image: ghcr.io/wg-easy/wg-easy:latest
     container_name: wireguard
     volumes:
       - .:/etc/wireguard
