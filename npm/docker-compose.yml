@@ -8,8 +8,6 @@ services:
       - '80:80'
       - '81:81'
       - '443:443'
-    environment:
-      - DISABLE_IPV6=true
     volumes:
       - ./nginx/data:/data
       - ./nginx/letsencrypt:/etc/letsencrypt
