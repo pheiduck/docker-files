@@ -1,10 +1,11 @@
 version: "3.8"
 services:
   dashy:
-    image: lissy93/dashy:latest
+    network_mode: "bridge"
+    image: ghcr.io/lissy93/dashy:latest
     container_name: dashy
     volumes:
-      - ./public/config.yml:/app/public/conf.yml
+      - ./public/conf.yml:/app/public/conf.yml
     ports:
       - 4000:80
     environment:
