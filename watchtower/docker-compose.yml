@@ -1,7 +1,7 @@
 version: "3.8"
 services:
   watchtower:
-    network_mode: "bridge"
+    network_mode: "host"
     image: containrrr/watchtower
     container_name: watchtower
     restart: always
