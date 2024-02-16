@@ -2,11 +2,10 @@ version: '3.8'
 
 services:
   uptime-kuma:
+    network_mode: "host"
     image: louislam/uptime-kuma:latest
     container_name: uptime-kuma
     volumes:
       - ./data:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
-    ports:
-      - 31:3001
     restart: always
