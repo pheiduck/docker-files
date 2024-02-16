@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   vaultwarden:
+    network_mode: "bridge"
     container_name: vaultwarden
     image: vaultwarden/server:latest
     restart: always
