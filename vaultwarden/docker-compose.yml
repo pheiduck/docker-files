@@ -18,5 +18,6 @@ services:
       - ADMIN_RATELIMIT_SECONDS=60
       - ADMIN_TOKEN=PaSsWoRd
       - SENDS_ALLOWED=true
+      - SIGNUPS_ALLOWED=false
       - EMERGENCY_ACCESS_ALLOWED=true
       - WEB_VAULT_ENABLED=true
