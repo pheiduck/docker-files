@@ -2,7 +2,7 @@ services:
   monitoring:
     network_mode: "host"
     container_name: monitoring
-    image: nicolargo/glances:latest-full
+    image: nicolargo/glances:latest
     restart: always
     environment:
       - "GLANCES_OPT=-w"
