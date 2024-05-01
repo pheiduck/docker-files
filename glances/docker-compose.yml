@@ -1,0 +1,11 @@
+services:
+  monitoring:
+    network_mode: "host"
+    container_name: monitoring
+    image: nicolargo/glances:latest-full
+    restart: always
+    environment:
+      - "GLANCES_OPT=-w"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    pid: "host"
