@@ -2,13 +2,12 @@ services:
   wg-easy:
     network_mode: "host"
     environment:
-      - WG_HOST=<dyndns>
-      - PASSWORD=${PWD}
-      - WG_PORT=51820
-      - WG_DEFAULT_ADDRESS=10.8.0.x
-      - WG_DEFAULT_DNS=<dns>
-      - WG_PERSISTENT_KEEPALIVE=25
-
+      - WG_HOST=${wg_host}
+      - PASSWORD=${wg_pwd}
+      - WG_PORT=${wg_port}
+      - WG_DEFAULT_ADDRESS=${wg_address}
+      - WG_DEFAULT_DNS=${wg_dns}
+      - WG_PERSISTENT_KEEPALIVE=${wg_keepalive}
     image: ghcr.io/wg-easy/wg-easy:latest
     container_name: wireguard
     volumes:
