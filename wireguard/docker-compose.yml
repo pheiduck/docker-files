@@ -4,10 +4,11 @@ services:
     environment:
       - WG_HOST=${wg_host}
       - PASSWORD=${wg_pwd}
-      - WG_PORT=${wg_port}
       - WG_DEFAULT_ADDRESS=${wg_address}
       - WG_DEFAULT_DNS=${wg_dns}
       - WG_PERSISTENT_KEEPALIVE=${wg_keepalive}
+      - UI_TRAFFIC_STATS=${traffic_stats}
+      - UI_CHART_TYPE=${chart}
     image: ghcr.io/wg-easy/wg-easy:latest
     container_name: wireguard
     volumes:
