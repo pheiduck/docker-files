@@ -1,7 +1,7 @@
 services:
   watchtower:
     network_mode: "host"
-    image: containrrr/watchtower
+    image: ghcr.io/nicholas-fedor/watchtower
     container_name: watchtower
     restart: always
     volumes:
@@ -10,6 +10,5 @@ services:
     environment:
       WATCHTOWER_CLEANUP: "true"
       WATCHTOWER_INCLUDE_RESTARTING: "true"
-      WATCHTOWER_ROLLING_RESTART: "true"
       WATCHTOWER_INCLUDE_STOPPED: "true"
       WATCHTOWER_SCHEDULE: 0 0 5 * * *
