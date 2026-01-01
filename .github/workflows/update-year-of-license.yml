@@ -1,6 +1,7 @@
 name: Update copyright year(s) in license file
 
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0 3 1 1 *' # 03:00 AM on January 1
 
@@ -11,6 +12,6 @@ jobs:
       - uses: actions/checkout@main
         with:
           fetch-depth: 0
-      - uses: FantasticFiasco/action-update-license-year@master
+      - uses: FantasticFiasco/action-update-license-year@main
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
